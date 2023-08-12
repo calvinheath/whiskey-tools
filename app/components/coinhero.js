@@ -12,18 +12,18 @@ const coinHero = () => {
             <div className='tokenList'>
                 <div className='tokenItem'>
                     <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
-                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} unoptimized/></span></a>
                     
                 </div>
                 
                 <div className='tokenItem'>
                 <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
-                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} unoptimized/></span></a>
                 </div>
                 
                 <div className='tokenItem'>
                 <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
-                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} unoptimized/></span></a>
                 </div>
                
                 
@@ -35,7 +35,7 @@ const coinHero = () => {
             <div className='tokenList'>
                 <div className='tokenItem'>
                 <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
-                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} unoptimized/></span></a>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@ const coinHero = () => {
             <div className='tokenList'>
                 <div className='tokenItem'>
                 <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
-                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} unoptimized/></span></a>
                 </div>
             </div>
         </div> 

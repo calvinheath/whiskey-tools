@@ -15,7 +15,7 @@ export default function Home() {
 
        <section className="hero">
        <div>
-       <h2>Say<span className='emojiHeading'><Image width="100" height="100" src={handWaving} /></span>to complicated tasks with Whiskey.Tools</h2>
+       <h2>Say<span className='emojiHeading'><Image width="100" height="100" src={handWaving} unoptimized/></span>to complicated tasks with Whiskey.Tools</h2>
          <p>The ultimate platform for listing and voting on crypto tokens. <br/> Our Presale is Live, get some $WSKY before it ends</p>
          <Link href="/presale"><button>Buy WSKY</button></Link>
        </div>

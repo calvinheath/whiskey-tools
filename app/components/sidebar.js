@@ -14,11 +14,11 @@ const Sidebar = () => {
             <nav className="sidebarContainer">
             <div className='sidebarlinks'>
                 <h2 className="sidebarHeader">Whiskey.Sniper</h2>
-                <Link href="/" className="navLink">Home <span className='emojiButton emoji'><Image width="24" height="24" src={Home} /></span></Link>
-                <Link href="/presale" className="navLink">Presale <span className='emojiButton emoji'><Image width="24" height="24" src={calendarFlip} /></span></Link>
-                <Link href="#" className="navLink" disabled>Top Tokens <span className='emojiButton emoji'><Image width="24" height="24" src={chartRising} /></span></Link>
-                <Link href="#" className="navLink" disabled>Trending <span className='emojiButton emoji'><Image width="24" height="24" src={Fire} /></span></Link>
-                <Link href="#" className="navLink" disabled>Promote <span className='emojiButton emoji'><Image width="24" height="24" src={Rocket} /></span></Link>
+                <Link href="/" className="navLink">Home <span className='emojiButton emoji'><Image width="24" height="24" src={Home} unoptimized/></span></Link>
+                <Link href="/presale" className="navLink">Presale <span className='emojiButton emoji'><Image width="24" height="24" src={calendarFlip} unoptimized/></span></Link>
+                <Link href="#" className="navLink" disabled>Top Tokens <span className='emojiButton emoji'><Image width="24" height="24" src={chartRising} unoptimized/></span></Link>
+                <Link href="#" className="navLink" disabled>Trending <span className='emojiButton emoji'><Image width="24" height="24" src={Fire} unoptimized/></span></Link>
+                <Link href="#" className="navLink" disabled>Promote <span className='emojiButton emoji'><Image width="24" height="24" src={Rocket} unoptimized/></span></Link>
             </div>
 
             <button disabled>List Your Token</button>
