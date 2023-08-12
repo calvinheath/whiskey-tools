@@ -1,0 +1,252 @@
+/* styles/global.css */
+
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a default font family */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Add some spacing */
+body {
+  padding: 20px;
+}
+
+/* Customize links */
+a, .navLink {
+  color: var(--secondary-foreground) !important;
+  text-decoration: none;
+}
+
+a, .navLink:hover {
+  color: #f20034 !important;
+  text-decoration: none;
+}
+
+a:hover {
+background-color: #ffeaed !important;
+}
+
+/* Style headings */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* Add your Tailwind CSS styles here */
+/* Tailwind CSS styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom root variables */
+:root {
+  --foreground: #2a2a2a;
+  --secondary-foreground: #4a4a4a;
+  --background-start: #ececec;
+  --background-end: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #ffffff;
+    --background-start: #4a4a4a;
+    --background-end: #2a2a2a;
+  }
+}
+
+/* Body styling */
+/* General Styles */
+/* General Styles */
+html
+{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 20px 0px;
+  color: #333;
+  background-color: #f4f4f4;
+  min-height: 100%;
+  text-rendering: antialiased;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  padding-left: 250px;
+  gap: 50px;
+  display: grid;
+  height: 100%;
+}
+
+a, .navlink {
+  text-decoration: none;
+  color: #f20034;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover, .navlink:hover {
+  color: #c31c40;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #f20034;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-family: 'Space Mono';
+  font-size: 16px;
+  filter: drop-shadow(2px 4px 6px #33333340);
+
+}
+
+button:hover {
+  background-color: #c31c40;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  color: var(--foreground);
+  border-radius: 15px;
+  grid-template-columns: 2fr 1fr;
+  }
+
+  h2 {
+  font-size: 2rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 500;
+}
+
+.hero   h2 {
+  font-size: 4rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 900;
+  letter-spacing: -2px;
+
+}
+
+.hero p {
+  font-size:  2rem;
+  margin-top: 20px;
+  letter-spacing: -2px;
+  line-height: 40px;
+  font-family: 'Inter';
+  font-weight: 500;
+}
+
+.hero button {
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+.heroImage
+{
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1 !important;
+}
+
+/* Features */
+.features {
+  padding: 50px 0;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.features h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.features li {
+  font-size: 1.2rem;
+  margin: 15px 0;
+}
+
+/* Top Tokens */
+.top-tokens {
+  padding: 50px 0;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.top-tokens h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top-tokens ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.top-tokens li {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-radius: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.top-tokens li:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+  padding: 30px 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+a:disabled, button:disabled
+{
+  cursor: no-drop;
+}
+a:active, button:active 
+{
+  scale: 0.98;
+}

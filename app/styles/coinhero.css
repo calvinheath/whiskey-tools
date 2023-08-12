@@ -1,0 +1,96 @@
+.tokenItem a {
+    display: flex;
+    border-radius: 20px;
+    padding: 0px 10px;
+    transition: 0.2s ease;
+    color: var(--background-end) !important;
+    width: 100%;
+    text-align: left;
+    margin-left: 20px;
+    align-items: center;
+    height: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    justify-content: space-between;
+}
+
+.tokenItem a:hover {
+    background-color: white !important;
+    color: var(--foreground) !important;
+    text-decoration: none;
+    font-weight: 900;
+}
+.coinHero
+{
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    background-color: var(--foreground);
+    border-radius: 20px;
+    padding: 50px;
+    gap: 50px;
+}
+.tokenItem
+{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--secondary-foreground   );
+    padding: 10px 0px;
+}
+.tokenItem:last-child
+{
+    border-bottom: none;
+}
+
+.tokenItem img 
+{
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+.tokenList
+{
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    overflow-y: scroll;
+    padding: 20px;
+    border-radius: 20px;
+}
+.categoryContainer
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.categoryContainer h2
+{
+    color: var(--background-end);
+    text-align: center;
+}
+
+.tokenList::-webkit-scrollbar
+{
+    display: none;
+}
+a .emoji
+{
+    opacity: 0;
+    transition: 0.1s ease;
+    filter: drop-shadow(0px 4px 6px #33333325);
+}
+
+a:hover .emoji
+{
+    opacity: 1;
+    transition-delay: 0.15;
+
+}

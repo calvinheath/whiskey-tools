@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+.sidebarContainer {
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sidebarHeader {
+    font-size: 20px;
+    color: #f20034;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+    
+}
+
+.navLink {
+    display: flex;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    transition: background-color 0.2s ease-in-out;
+    color: #333;
+    justify-content: space-between;
+}
+
+
+.sidebarContainer button
+{
+    width: 100%;
+    position: relative;
+    margin: 40px 0px;
+}
+
+
