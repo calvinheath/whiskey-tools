@@ -114,7 +114,8 @@ a:hover, .navlink:hover {
 
 button {
   padding: 10px 20px;
-  background-color: #f20034;
+  background-color:rgba(242.00000077486038, 0, 52.000000700354576, 1);
+	background-image:linear-gradient(0deg, rgba(242.00000077486038, 0, 52.000000700354576, 1) 0%,rgba(255, 184.95296269655228, 134.2292109131813, 0.5) 100%) ;
   color: #fff;
   border: none;
   border-radius: 20px;
@@ -143,17 +144,11 @@ button:hover {
   grid-template-columns: 2fr 1fr;
   }
 
-  h2 {
-  font-size: 2rem;
-  font-family: 'Space Mono', monospace;
-  font-weight: 500;
-}
 
 .hero   h2 {
   font-size: 4rem;
   font-family: 'Space Mono', monospace;
   font-weight: 900;
-  letter-spacing: -2px;
 
 }
 
@@ -240,9 +235,10 @@ button:hover {
   color: #fff;
   text-align: center;
   border-radius: 15px;
+  margin-top: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
-a:disabled, button:disabled
+a:disabled, .navLink:disabled, button:disabled
 {
   cursor: no-drop;
 }
@@ -250,3 +246,53 @@ a:active, button:active
 {
   scale: 0.98;
 }
+
+  h2 .emojiHeading
+  {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 20px;
+  }
+  h2 .emojiHeading img
+  {
+    aspect-ratio: 1 / 1;
+    margin-bottom: -16px;
+  }
+
+  
+  p .emojiSubheading
+  {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 10px;
+  }
+  p .emojiSubheading img
+  {
+    aspect-ratio: 1 / 1;
+    margin-top: -8px;
+    margin-bottom: -4px;
+  }
+
+  
+  .emojiButton
+  {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+  }
+  .emojiSubheading img
+  {
+    aspect-ratio: 1 / 1;
+    margin-top: -8px;
+    margin-bottom: -4px;
+  }
+
+  

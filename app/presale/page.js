@@ -9,6 +9,9 @@ import ConnectWallet from '../components/connectWallet';
 import "../globals.css";
 import "../styles/presale.css";
 import WSKYABI from "../WSKYAbi.json";
+import Image from 'next/image';
+import handWaving from "../../public/icons/handWaving.png"
+import beerClink from "../../public/icons/beerClink.png"
 
 const CONTRACT_ABI = WSKYABI;   
 const CONTRACT_ADDRESS = '0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65';
@@ -58,7 +61,7 @@ export default function Presale() {
     const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-    return `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
 
   const handleWskyChange = (e) => {
@@ -109,7 +112,7 @@ export default function Presale() {
     setraisedInBnb(raisedInBnb);
 
     const progressPercentage = (parseFloat(raisedInBnb) / parseFloat(PRESALE_CAP_BNB)) * 10;
-    setProgress(progressPercentage);
+    setProgress(progressPercentage + 10);
   }
 
   return (
@@ -118,18 +121,18 @@ export default function Presale() {
       <div className='container'>
         <section className='presaleContainer'>
           <div className='presaleContent'>
-            <h2>$WSKY Presale</h2>
+            <h2>Say<span className='emojiHeading'><Image width="100" height="100" src={handWaving} /></span>to complicated tasks with Whiskey.Tools</h2>
             <p>We have an amazing presale going on.
                 <br />
-                Buy some now so you don&apos;t miss out <span className='emoji'>🥃</span>
+                Buy some now so you don&apos;t miss out <span className='emojiSubheading'><Image width="40" height="40" src={beerClink} /></span>
             </p>
             <div className='buttonGroup'>
               <a href="https://bscscan.com/address/0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65#readContract" target='_blank'><button>View on BSCScan</button></a>
-              <a href="https://twitter.com/whiskeytoolsai" target='_blank'><button>View on BSCScan</button></a>
-              <a href="https://t.me/whiskeytools"><button>View on BSCScan</button></a>
+              <a href="https://twitter.com/whiskeytoolsai" target='_blank'><button>Twitter</button></a>
+              <a href="https://t.me/whiskeytools"><button>Telegram</button></a>
             </div>
           </div>
-          <div className='presaleCard'>
+          <div className='presaleCard'> 
             <h1>Purchase WSKY Here</h1>
             <p>{countdown}</p>
 

@@ -22,7 +22,7 @@
     margin-bottom: 1rem;
     text-align: center;
     font-weight: 500;
-    
+    font-family: 'Space Mono';
 }
 
 .navLink {
@@ -33,6 +33,9 @@
     transition: background-color 0.2s ease-in-out;
     color: #333;
     justify-content: space-between;
+    font-family: 'Inter';
+    letter-spacing: -1px;
+    font-size: 16px;
 }
 
 

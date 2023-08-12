@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
                 <meta property="og:image" content="https://i.ibb.co/7Y52bx7/fwa.png" />
             </head>
             <body>{children}</body>
+            
         </html>
     );
 }

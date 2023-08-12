@@ -48,17 +48,23 @@
     border-radius: 20px;
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column !important;
+    gap: 10px;
+    box-shadow: -8px 16px 60px -50px var(--foreground), inset 10px -0px 50px -40px var(--foreground);
+    outline: 2px solid #2a2a2a05;
+    outline-offset: -2px;
   }
 
   .presaleContainer {
     display: grid;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    max-width: 100%;
+    justify-content: space-around;
+    width: 100%;
     color: var(--foreground);
     border-radius: 15px;
-    grid-template-columns: 1.5fr 2fr;
+    grid-template-columns: 2fr 1fr;
     margin: 20px auto;
     gap: 50px;
     
@@ -72,7 +78,7 @@
 
     font-family: 'Space Mono', monospace;
     font-weight: 900;
-    letter-spacing: -2px;
+    letter-spacing: -4px;
   
   }
   
@@ -85,11 +91,17 @@
     font-weight: 500;
   }
   
+
   .presaleContainer button {
     margin-top: 40px;
     border-radius: 20px;
+    overflow: hidden !important;
   }
 
+  .presaleContainer a:hover {
+    border-radius: 20px;
+    background: none !important;
+  }
   .presaleCard input
   {
     padding: 20px 20px;
@@ -111,10 +123,10 @@
   }
 .presaleCard p
 {
-  font-size: 1.5rem;
-  font-family:  'Space Mono', monospace;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 2rem;
+  font-family:  'Inter', monospace;
+  font-weight: 300;
+  letter-spacing: -2px;
   margin: 0;
   padding: 0;
 }
@@ -144,7 +156,8 @@ input[type=number]::-webkit-outer-spin-button {
   left: 0;
   top: 0;
   height: 50px;
-  background-color: #f20034;
+  background-color:rgba(242.00000077486038, 0, 52.000000700354576, 1);
+	background-image:linear-gradient(0deg, rgba(242.00000077486038, 0, 52.000000700354576, 1) 0%,rgba(255, 184.95296269655228, 134.2292109131813, 0.5) 100%) ;
   border-radius: 20px 20px 40px 20px!important;
   margin: 20px 0px;
 }

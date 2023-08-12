@@ -4,7 +4,7 @@ import CoinHero from './components/coinhero';
 import Sidebar from './components/sidebar';
 import "./globals.css"
 import Link from 'next/link';
-
+import handWaving from "../public/icons/handWaving.png"
 export default function Home() {
   return (
     <div>
@@ -15,7 +15,7 @@ export default function Home() {
 
        <section className="hero">
        <div>
-         <h2>Welcome to Whiskey.Sniper</h2>
+       <h2>Say<span className='emojiHeading'><Image width="100" height="100" src={handWaving} /></span>to complicated tasks with Whiskey.Tools</h2>
          <p>The ultimate platform for listing and voting on crypto tokens. <br/> Our Presale is Live, get some $WSKY before it ends</p>
          <Link href="/presale"><button>Buy WSKY</button></Link>
        </div>
@@ -25,7 +25,7 @@ export default function Home() {
      <CoinHero />
 
      <footer className="footer">
-            <p>&copy; 2023 Whiskey.Tools. All rights reserved.</p>
+            <p>&copy; 2023 Whiskey.Tools AI - All rights reserved.</p>
         </footer>
      </div>
      </div>

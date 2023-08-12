@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/coinhero.css';
-import Image from 'next'
+import Image from 'next/image';
+import handPointRight from "../../public/icons/handPointRight.png";
+import placeHolderTokenIcon from "../../public/placeholderToken.png"
 const coinHero = () => {
     return (
      
@@ -9,19 +11,19 @@ const coinHero = () => {
             <h2>BASE Network</h2>
             <div className='tokenList'>
                 <div className='tokenItem'>
-                    <img className="tokenIcon sm" src="https://storage.top100token.com/images/37bc203f-18e9-471e-a883-63523173f039.webp"/>
-                    <a href="#">SeekCoin <span className='emoji'>👉</span></a>
+                    <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
                     
                 </div>
                 
                 <div className='tokenItem'>
-                    <img className="tokenIcon sm" src="https://storage.top100token.com/images/37bc203f-18e9-471e-a883-63523173f039.webp"/>
-                    <a href="#">Meta Token <span className='emoji'>👉</span></a>
+                <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
                 </div>
                 
                 <div className='tokenItem'>
-                    <img className="tokenIcon sm" src="https://storage.top100token.com/images/37bc203f-18e9-471e-a883-63523173f039.webp"/>
-                    <a href="#">SeekCoin <span className='emoji'>👉</span></a>
+                <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
                 </div>
                
                 
@@ -32,8 +34,8 @@ const coinHero = () => {
             <h2>ETH Network</h2>
             <div className='tokenList'>
                 <div className='tokenItem'>
-                    <img className="tokenIcon sm" src="https://storage.top100token.com/images/37bc203f-18e9-471e-a883-63523173f039.webp"/>
-                    <a href="#">SeekCoin</a>
+                <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
                 </div>
             </div>
         </div>
@@ -42,8 +44,8 @@ const coinHero = () => {
             <h2>BSC Network</h2>
             <div className='tokenList'>
                 <div className='tokenItem'>
-                    <img className="tokenIcon sm" src="https://storage.top100token.com/images/37bc203f-18e9-471e-a883-63523173f039.webp"/>
-                    <a href="#">SeekCoin</a>
+                <Image className="tokenIcon sm" width="48" height="48" src={placeHolderTokenIcon}/>
+                    <a href="#">SeekCoin<span className='emojiButton emoji'><Image width="24" height="24" src={handPointRight} /></span></a>
                 </div>
             </div>
         </div> 
