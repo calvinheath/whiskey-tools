@@ -119,9 +119,10 @@ export default function Presale() {
     <div>
       <Sidebar />
       <div className='container'>
-        <section className='presaleContainer'>
+        <section className='presaleContainer hero'>
           <div className='presaleContent'>
-            <h2>Say<span className='emojiHeading'><Image width="100" height="100" src={handWaving} unoptimized/></span>to complicated tasks with Whiskey.Tools</h2>
+          <h2>Say<span className='emojiHeading'><Image width="100" height="100" src={handWaving} unoptimized/></span>to hard tasks <br/> with Whiskey.Tools</h2>
+
             <p>We have an amazing presale going on.
                 <br />
                 Buy some now so you don&apos;t miss out <span className='emojiSubheading'><Image width="40" height="40" src={beerClink} /></span>
