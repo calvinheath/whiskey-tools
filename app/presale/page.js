@@ -156,7 +156,7 @@ export default function Presale() {
                     min="125"  // Minimum WSKY to buy
                     placeholder='$WSKY'
                   />
-                  <p>BNB: {bnbValue.toFixed(4)}<br/>(plus 0.0005 gas)</p>
+                  <p>BNB: {bnbValue.toFixed(4)}<br/>(+ 0.0005 gas)</p>
                   <button type="submit">Confirm Purchase</button>
                 </form>
                 <div className='buttonGroup center'>
