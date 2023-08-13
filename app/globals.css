@@ -51,8 +51,8 @@ h1 {
 
 /* Custom root variables */
 :root {
-  --foreground: #2a2a2a;
-  --secondary-foreground: #4a4a4a;
+  --foreground: #1a1a1a;
+  --secondary-foreground: #2a2a2a;
   --background-start: #ececec;
   --background-end: #ffffff;
   --primary-accent: #f20034;
@@ -63,8 +63,11 @@ h1 {
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: #ffffff;
-    --background-start: #4a4a4a;
+    --secondary-foreground: #ececec;
+    --background-start: #1a1a1a;
     --background-end: #2a2a2a;
+    --primary-accent: #f20034;
+    --faded-accent: #ffeaed;
   }
 }
 

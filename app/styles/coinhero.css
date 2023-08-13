@@ -47,11 +47,16 @@
     padding: 50px;
 
     flex-direction: column;
-    background-color: var(--foreground);
+    background-color: var(--secondary-foreground) !important;
     border-radius: 20px;
 
 }
-
+.colorLegend h1
+{
+    text-align: center;
+    margin: 20px 0px;
+    color: var(--background-end);
+}
 .tokenItem
 {
     display: flex;
@@ -95,7 +100,7 @@
 
 .tokenItem .unverified
 {
-    outline: 2px solid var(--foreground);
+    outline: 2px solid var(--secondary-foreground);
 }
 
 .tokenItem .scam
@@ -152,13 +157,14 @@
 .tokenList
 {
     width: 80%;
-    background-color: #1a1a1a;
+    background-color: var(--foreground);
     display: flex;
     flex-direction: column;
     height: 350px;
     overflow-y: scroll;
     padding: 20px;
     border-radius: 20px;
+
 }
 .categoryContainer
 {
@@ -223,7 +229,7 @@ a:hover .emoji
         display: flex;
         flex-direction: column !important;
         height: 100%;
-        background-color: var(--foreground);
+        background-color: var(--secondary-foreground);
         border-radius: 0px !important;
         padding: 20px 0px !important;
         height: 100%;
@@ -257,7 +263,7 @@ a:hover .emoji
 .tokenList
 {
     width: 100%;
-    background-color: #1a1a1a;
+    background-color: var(--foreground);
     display: flex;
     flex-direction: column;
     height: 350px;

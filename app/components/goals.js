@@ -31,9 +31,7 @@ const coinHero = () => {
                 
         </div>
 
-        
-a
-        
+                
       </section>
 
     );

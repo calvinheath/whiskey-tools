@@ -27,7 +27,7 @@ export default function Presale() {
   const BNB_PRICE_USD = 240.18;
   const PRESALE_CAP_BNB = 200;  // Your goal in BNB
   const PRESALE_CAP_USD = PRESALE_CAP_BNB * BNB_PRICE_USD;
-  const raisedUsd = parseFloat(raisedInBnb) + 4.5 * BNB_PRICE_USD;
+  const raisedUsd = parseFloat(raisedInBnb) * BNB_PRICE_USD;
 
   useEffect(() => {
     const updateBlockchainInfo = async () => {

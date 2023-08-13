@@ -14,8 +14,11 @@ function ConnectWallet({ onConnect, onDisconnect }) {
       package: WalletConnectProvider,
       options: {
         rpc: {
-          1: 'https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID',
-          56: 'https://bsc-dataseed.binance.org/',
+          1: 'https://eth.llamarpc.com', // Ethereum
+          56: 'https://bsc-dataseed.binance.org/', // Binance Smart Chain
+          137: 'https://polygon.llamarpc.com', // Polygon
+          8453: 'https://mainnet.base.org	', // BASE
+          43114: 'https://avalanche-c-chain.publicnode.com', // Avalanche
         },
       },
     },
@@ -26,18 +29,30 @@ function ConnectWallet({ onConnect, onDisconnect }) {
       cacheProvider: true,
       providerOptions,
     });
-
+  
     const provider = await web3Modal.connect();
     const web3Instance = new Web3(provider);
-
+  
+    // Fetch accounts first
     const accounts = await web3Instance.eth.getAccounts();
     setAddress(accounts[0]);
     setWeb3(web3Instance);
-
+  
+    // Send a signature request to the user
+    try {
+      const message = "Please sign this message to confirm your identity.";
+      await web3Instance.eth.personal.sign(message, accounts[0]);
+      
+    } catch (error) {
+      console.error("User denied message signature:", error);
+      // Handle this error as you see fit, e.g., notify the user, log it, etc.
+    }
+  
     if (onConnect) {
       onConnect(web3Instance, accounts[0]);
     }
   };
+  
 
   const disconnectWallet = async () => {
     if (web3 && web3.currentProvider && web3.currentProvider.close) {

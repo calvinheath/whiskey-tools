@@ -20,7 +20,7 @@
 {
     aspect-ratio: 1 / 1 !important;
     filter: drop-shadow(4px 12px 16px #1a1a1a20) ;
-    height: 100%;
+    height: auto !important;
     width: 100%;
     overflow: visible;
 }
@@ -54,6 +54,8 @@ a .emoji
     filter: drop-shadow(2px 2px 6px #f1000075);
 }
 
+
+
 a:hover .emoji
 {
     opacity: 1;
@@ -71,5 +73,27 @@ a:hover .emoji
     {
         width: 50%;
     }
+    
 }
+@media only screen and (max-width: 600px)  {
+
+    .goalContainer
+    {
+        flex-direction: column;
+    }
+    .goal
+    {
+        width: 50%;
+    }
+    .goalImage
+{
+    aspect-ratio: 1 / 1 !important;
+    filter: drop-shadow(4px 12px 16px #1a1a1a20) ;
+    width: 100%;
+    max-height: 100% !important;
+    overflow: visible;
+}
+}
+
+
 
