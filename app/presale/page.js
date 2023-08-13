@@ -10,7 +10,6 @@ import "../globals.css";
 import "../styles/presale.css";
 import WSKYABI from "../WSKYAbi.json";
 import Image from 'next/image';
-import handWaving from "../../public/icons/handWaving.png"
 import beerClink from "../../public/icons/beerClink.png"
 import Goals from '../components/goals'
 const CONTRACT_ABI = WSKYABI;   
@@ -121,7 +120,7 @@ export default function Presale() {
       <div className='container'>
         <section className='presaleContainer hero'>
           <div className='presaleContent'>
-          <h2>Say<span className='emojiHeading'><Image alt="Waving" width="100" height="100" src={handWaving} unoptimized/></span>to hard tasks <br/> with Whiskey.Tools</h2>
+          <h2>Say<span className='emojiHeading'><Image alt="Waving" width="100" height="100" src="https://em-content.zobj.net/source/microsoft-teams/363/waving-hand_1f44b.png" unoptimized/></span>to hard tasks <br/> with Whiskey.Tools</h2>
 
             <p>We have an amazing presale going on.
                 <br />

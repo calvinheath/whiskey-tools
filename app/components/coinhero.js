@@ -1,12 +1,8 @@
 import React from 'react';
 import '../styles/coinhero.css';
 import Image from 'next/image';
-import handPointRight from "../../public/icons/handPointRight.png";
 import placeHolderTokenIcon from "../../public/placeholderToken.png"
-import Hush from "../../public/icons/Hush.png"
 import WSKYIcon from "../../public/WSKYLogo.png"
-import Confused from "../../public/icons/Confused.png"
-import Curse from "../../public/icons/Curse.png"
 import Shrimp from "../../public/ShrimpToken.jpg"
 import ZetosZES from "../../public/ZetosZES.png"
 
@@ -19,24 +15,24 @@ const coinHero = () => {
             <h2>BASE Network</h2>
             <div className='tokenList'>
                 <div className='tokenItem'>
-                    <Image alt="Shhh. It's a secret." className="tokenIcon sm promoted" width="48" height="48" src={Hush}/>
-                    <a href="#">Secret Coin (SCRT)<span className='emojiButton emoji'><Image alt="Shhh. It's a secret" width="24" height="24" src={Hush} unoptimized/></span></a>
+                    <Image alt="Shhh. It's a secret." className="tokenIcon sm promoted" width="48" height="48" src="https://em-content.zobj.net/source/microsoft-teams/363/shushing-face_1f92b.png" unoptimized/>
+                    <a href="#">Secret Coin (SCRT)<span className='emojiButton emoji'><Image alt="Shhh. It's a secret" width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/shushing-face_1f92b.png" unoptimized/></span></a>
                     
                 </div>
                 
                 <div className='tokenItem'>
                 <Image alt="Placeholder" className="tokenIcon sm unverified" width="48" height="48" src={placeHolderTokenIcon}/>
-                    <a href="#">SeekCoin (SEEK)<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src={handPointRight} unoptimized/></span></a>
+                    <a href="#">SeekCoin (SEEK)<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/backhand-index-pointing-right_1f449.png" unoptimized/></span></a>
                 </div>
                 
                 <div className='tokenItem'>
                 <Image alt="Placeholder" className="tokenIcon sm unverified" width="48" height="48" src={placeHolderTokenIcon}/>
-                    <a href="#">Fuji Swap (FUJI)<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src={handPointRight} unoptimized/></span></a>
+                    <a href="#">Fuji Swap (FUJI)<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/backhand-index-pointing-right_1f449.png" unoptimized/></span></a>
                 </div>
 
                 <div className='tokenItem'>
                 <Image alt="Shrimp" className="tokenIcon sm basechain" width="48" height="48" src={Shrimp}/>
-                    <a href="#">Shrimp (Shrimp)<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src={handPointRight} unoptimized/></span></a>
+                    <a href="#">Shrimp (Shrimp)<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/backhand-index-pointing-right_1f449.png" unoptimized/></span></a>
                 </div>
                
                 
@@ -47,13 +43,13 @@ const coinHero = () => {
             <h2>ETH Network</h2>
             <div className='tokenList'>
                 <div className='tokenItem'>
-                <Image alt="Invalid" className="tokenIcon sm ethchain" width="48" height="48" src={Confused}/>
-                <a href="#">Secret Coin<span className='emojiButton emoji'><Image width="24" height="24" src={Hush} unoptimized/></span></a>
+                <Image alt="Invalid" className="tokenIcon sm ethchain" width="48" height="48" src="https://em-content.zobj.net/source/microsoft-teams/363/thinking-face_1f914.png" unoptimized/>
+                <a href="#">Secret Coin<span className='emojiButton emoji'><Image width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/shushing-face_1f92b.png" unoptimized/></span></a>
                 </div>
 
                 <div className='tokenItem'>
-                <Image alt="Invalid" className="tokenIcon sm unverified" width="48" height="48" src={Confused}/>
-                <a href="#">Secret Coin<span className='emojiButton emoji'><Image width="24" height="24" src={Hush} unoptimized/></span></a>
+                <Image alt="Invalid" className="tokenIcon sm unverified" width="48" height="48" src="https://em-content.zobj.net/source/microsoft-teams/363/thinking-face_1f914.png" unoptimized/>
+                <a href="#">Secret Coin<span className='emojiButton emoji'><Image width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/shushing-face_1f92b.png" unoptimized/></span></a>
                 </div>
             </div>
         </div>
@@ -63,15 +59,15 @@ const coinHero = () => {
             <div className='tokenList'>
                 <div className='tokenItem'>
                 <Image alt="Whiskey.Tools Token Icon" className="tokenIcon sm bscchain" width="48" height="48" src={WSKYIcon}/>
-                    <a href="#">Whiskey.Tools<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src={handPointRight} unoptimized/></span></a>
+                    <a href="#">Whiskey.Tools<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/backhand-index-pointing-right_1f449.png" unoptimized/></span></a>
                 </div>
                 <div className='tokenItem'>
-                <Image alt="Curse (Reported as Scam, Do Not Trade)" className="tokenIcon sm scam" width="48" height="48" src={Curse}/>
-                    <a href="#">Scam Token (Not Supported)<span className='emojiButton emoji'><Image alt="Curse (Reported as Scam, Do Not Trade)" width="24" height="24" src={Curse} unoptimized/></span></a>
+                <Image alt="Curse (Reported as Scam, Do Not Trade)" className="tokenIcon sm scam" width="48" height="48" src="https://em-content.zobj.net/source/microsoft-teams/363/face-with-symbols-on-mouth_1f92c.png" unoptimized/>
+                    <a href="#">Scam Token (Not Supported)<span className='emojiButton emoji'><Image alt="Curse (Reported as Scam, Do Not Trade)" width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/face-with-symbols-on-mouth_1f92c.png" unoptimized/></span></a>
                 </div>
                 <div className='tokenItem'>
                 <Image className="tokenIcon sm bscchain" width="48" height="48" src={ZetosZES}/>
-                    <a href="#">Zetos (ZES)<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src={handPointRight} unoptimized/></span></a>
+                    <a href="#">Zetos (ZES)<span className='emojiButton emoji'><Image alt="Hand Pointing Right" width="24" height="24" src="https://em-content.zobj.net/source/microsoft-teams/363/backhand-index-pointing-right_1f449.png" unoptimized/></span></a>
                 </div>
             </div>
             
