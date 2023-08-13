@@ -13,7 +13,7 @@ const Sidebar = () => {
     return (
             <nav className="sidebarContainer">
             <div className='sidebarlinks'>
-                <h2 className="sidebarHeader">Whiskey.Sniper</h2>
+                <h2 className="sidebarHeader">Whiskey.Tools</h2>
                 <Link href="/" className="navLink">Home <span className='emojiButton emoji'><Image width="24" height="24" src={Home} unoptimized/></span></Link>
                 <Link href="/presale" className="navLink">Presale <span className='emojiButton emoji'><Image width="24" height="24" src={calendarFlip} unoptimized/></span></Link>
                 <Link href="#" className="navLink" disabled>Top Tokens <span className='emojiButton emoji'><Image width="24" height="24" src={chartRising} unoptimized/></span></Link>

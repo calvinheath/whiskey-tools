@@ -12,7 +12,7 @@ import WSKYABI from "../WSKYAbi.json";
 import Image from 'next/image';
 import handWaving from "../../public/icons/handWaving.png"
 import beerClink from "../../public/icons/beerClink.png"
-
+import Goals from '../components/goals'
 const CONTRACT_ABI = WSKYABI;   
 const CONTRACT_ADDRESS = '0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65';
 
@@ -21,14 +21,14 @@ export default function Presale() {
   const [amount, setAmount] = useState('');
   const [bnbValue, setBnbValue] = useState(0);  // To store the equivalent BNB value
   const [walletAddress, setWalletAddress] = useState('');
-  const [raisedInBnb, setraisedInBnb] = useState('0');
+  const [raisedInBnb, setraisedInBnb] = useState('3');
 
   const [claimableBalance, setClaimableBalance] = useState('0');
   const [progress, setProgress] = useState('10');  // This will store the progress percentage
   const BNB_PRICE_USD = 240.18;
   const PRESALE_CAP_BNB = 200;  // Your goal in BNB
   const PRESALE_CAP_USD = PRESALE_CAP_BNB * BNB_PRICE_USD;
-  const raisedUsd = parseFloat(raisedInBnb) * BNB_PRICE_USD;
+  const raisedUsd = parseFloat(raisedInBnb) + 4.5 * BNB_PRICE_USD;
 
   useEffect(() => {
     const updateBlockchainInfo = async () => {
@@ -125,10 +125,10 @@ export default function Presale() {
 
             <p>We have an amazing presale going on.
                 <br />
-                Buy some now so you don&apos;t miss out <span className='emojiSubheading'><Image width="40" height="40" src={beerClink} /></span>
+                Buy some now so you don&apos;t miss out <span className='emojiSubheading'><Image width="40" height="40" src={beerClink} unoptimized/></span>
             </p>
             <div className='buttonGroup'>
-              <a href="https://bscscan.com/address/0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65#readContract" target='_blank'><button>View on BSCScan</button></a>
+              <a href="https://bscscan.com/address/0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65#code" target='_blank'><button>View on BSCScan</button></a>
               <a href="https://twitter.com/whiskeytoolsai" target='_blank'><button>Twitter</button></a>
               <a href="https://t.me/whiskeytools"><button>Telegram</button></a>
             </div>
@@ -142,9 +142,9 @@ export default function Presale() {
   {walletAddress ? (
               <div>
                 <div className="progress-container">
-    <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-    <span>${raisedUsd.toFixed(2)} / ${PRESALE_CAP_USD}</span>
-  </div>
+                 <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+                <span>${raisedUsd.toFixed(2)} / ${PRESALE_CAP_USD}</span>
+             </div>
                 <form onSubmit={e => { e.preventDefault(); buyTokens(); }}>
                   <label htmlFor="inputHeading"></label>
                   <input 
@@ -181,6 +181,8 @@ export default function Presale() {
            
           </div>
         </section>
+        <Goals/>
+        <h2 className='sectionHeader'>View Top Tokens</h2>
 
         <CoinHero />
 
