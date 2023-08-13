@@ -4,7 +4,7 @@ import Link from 'next/link';  // Import the Link component
 import Image from 'next/image';
 import Rocket from "../../public/icons/Rocket.png"
 import Fire from "../../public/icons/Fire.png"
-import calendarFlip from "../../public/icons/calendarTear.png"
+import calendarFlip from "../../public/icons/calendarFlip.png"
 import Home from "../../public/icons/Home.png"
 import chartRising from "../../public/icons/chartRising.png"
 

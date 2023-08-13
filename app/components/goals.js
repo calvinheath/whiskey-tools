@@ -1,15 +1,10 @@
 import React from 'react';
 import '../styles/goals.css';
 import Image from 'next/image';
-import handPointRight from "../../public/icons/handPointRight.png";
-import placeHolderTokenIcon from "../../public/placeholderToken.png"
-import Hush from "../../public/icons/Hush.png"
-import WSKYIcon from "../../public/WSKYLogo.png"
-import Confused from "../../public/icons/Confused.png"
-import Curse from "../../public/icons/Curse.png"
-import Rocket from "../../public/icons/Rocket.png"
-import Pumpkin from "../../public/icons/Pumpkin.png"
-import coderHuman from "../../public/icons/coderHuman.png"
+import Hush from "../../public/icons/Hush.png";
+import Rocket from "../../public/icons/Rocket.png";
+import Pumpkin from "../../public/icons/Pumpkin.png";
+import coderHuman from "../../public/icons/coderHuman.png";
 
 const coinHero = () => {
     return (
@@ -40,7 +35,7 @@ const coinHero = () => {
         </div>
 
         
-
+a
         
       </section>
 
