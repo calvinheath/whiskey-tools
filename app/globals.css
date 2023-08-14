@@ -33,7 +33,7 @@ a, .navLink:hover {
   text-decoration: none;
 }
 
-a:hover {
+.navLink:hover {
 background-color: var(--faded-accent) !important;
 }
 
@@ -120,23 +120,23 @@ button {
 	background-image:linear-gradient(0deg, rgba(242.00000077486038, 0, 52.000000700354576, 1) 0%,rgba(255, 184.95296269655228, 134.2292109131813, 0.5) 100%) ;
   color: var(--background-end);
   border: none;
-  border-radius: 20px;
+  border-radius: 20px !important;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   font-family: 'Space Mono';
   font-size: 16px;
   filter: drop-shadow(2px 4px 6px #33333340);
-
-}
+} 
 
 button:hover {
   background-color: #c31c40;
+
 }
 
 /* Hero Section */
 .hero {
-  display: grid;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -171,7 +171,6 @@ button:hover {
 
 .hero button {
   border-radius: 20px;
-  overflow: hidden !important;
 
 }
 
@@ -181,6 +180,7 @@ button:hover {
   max-width: 100%;
   height: auto;
   aspect-ratio: 1 / 1 !important;
+  place-self: right;
 }
 
 /* Features */
@@ -213,7 +213,11 @@ button:hover {
   font-size: 1.2rem;
   margin: 15px 0;
 }
-
+.tokenomicsImg
+{
+  width: 90% !important;
+  margin: -50px auto;
+}
 /* Top Tokens */
 .top-tokens {
   padding: 50px 0;
@@ -252,13 +256,14 @@ button:hover {
 /* Footer */
 .footer {
   padding: 30px 0;
-  background-color: var(--foreground);
+  background-color: var(--secondary-foreground);
   color: var(--background-start);
   text-align: center;
-  border-radius: 15px;
-  margin-top: 10px;
+  border-radius: 20px;
+  margin-top: 20px !important;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   width: 100% !important;
+  user-select: none;
 }
 a:disabled, .navLink:disabled, button:disabled
 {
@@ -329,7 +334,29 @@ a:active, button:active
   }
   .buttonGroup button
   {
-    overflow: hidden !important;
+  }
+
+ .footerEmoji img
+  {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    width: 40px !important;
+    height: 40px !important;
+    margin: -12px 5px;
+    -webkit-user-drag: none;
+  }
+  .footerEmoji img
+  {
+    aspect-ratio: 1 / 1;
+  }
+  .footer p
+  {
+    display: flex;  
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    align-items: center;
   }
 
   .sectionHeader
@@ -351,6 +378,14 @@ a:active, button:active
       display: grid;
       height: 100%;
     }
+    .tokenomicsImg
+{
+  width: 75% !important;
+  margin: 0 auto;
+  background-color: white;
+  padding: 0px 20px;
+  border-radius: 20px;
+}
 
     .sectionHeader
   {
@@ -482,5 +517,9 @@ a:active, button:active
       margin: 0 auto;
       text-align: center;
       font-weight: 900 !important;
+    }
+    button 
+    {
+      color: var(--faded-accent) !important;
     }
   }

@@ -4,7 +4,7 @@ import CoinHero from './components/coinhero';
 import Sidebar from './components/sidebar';
 import "./globals.css"
 import Link from 'next/link';
-
+import Tokenomics from "../public/Tokenomics.png"
 export default function Home() {
   return (
     <div>
@@ -23,15 +23,14 @@ export default function Home() {
         <a href="https://t.me/whiskeytools"><button>Telegram</button></a>
         </div>
        </div>
-       <Image alt="Whiskey Tools Hero Image" className="heroImage" src={HeroImg} />
+       <Image alt="Whiskey Tools Hero Image" className="heroImage" width="0" height="0" style={{width: "380px",maxWidth: "35%"}}src="https://em-content.zobj.net/source/microsoft-teams/363/robot_1f916.png" unoptimized/>
      </section>
+
      <h2 className='sectionHeader'>View Top Tokens</h2>
 
      <CoinHero />
 
-     <footer className="footer">
-            <p>&copy; 2023 Whiskey.Tools AI - All rights reserved.</p>
-        </footer>
+     
      </div>
      </div>
   )

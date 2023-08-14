@@ -2,6 +2,16 @@
 
 'use client';
 
+import {
+  EthereumClient,
+  w3mConnectors,
+  w3mProvider,
+} from "@web3modal/ethereum";
+import { Web3Modal } from "@web3modal/react";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { arbitrum, mainnet, optimism, polygon, base, bsc, fantom, cronos, pulsechain } from "wagmi/chains";
+
+
 import { useState, useEffect } from 'react';
 import CoinHero from '../components/coinhero';
 import Sidebar from '../components/sidebar';
@@ -10,37 +20,54 @@ import "../globals.css";
 import "../styles/presale.css";
 import WSKYABI from "../WSKYAbi.json";
 import Image from 'next/image';
-import beerClink from "../../public/icons/beerClink.png"
-import Goals from '../components/goals'
+import beerClink from "../../public/icons/beerClink.png";
+import Goals from '../components/goals';
+import { getCountdown } from '../functions/getCountdown';
+import { buyTokens } from '../functions/buyTokens';
+import { refund } from '../functions/refund';
+import { viewClaimableBalance } from '../functions/viewClaimableBalance';
+import { fetchTotalRaised } from '../functions/fetchTotalRaised';
+import Tokenomics from "../../public/Tokenomics.png"
 const CONTRACT_ABI = WSKYABI;   
 const CONTRACT_ADDRESS = '0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65';
+const projectId = "f82c4364b5a9adf93d73dbef5950e0a2";
+const chains = [arbitrum, mainnet, optimism, polygon, base, bsc, fantom, cronos, pulsechain];
+const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors: w3mConnectors({ chains, projectId }),
+  publicClient,
+});
+const ethereumClient = new EthereumClient(wagmiConfig, chains);
 
 export default function Presale() {
   const [web3, setWeb3] = useState(null);
-  const [amount, setAmount] = useState('');
-  const [bnbValue, setBnbValue] = useState(0);  // To store the equivalent BNB value
+  const [amount, setAmount] = useState('5000');
+  const [bnbValue, setBnbValue] = useState(0);
   const [walletAddress, setWalletAddress] = useState('');
   const [raisedInBnb, setraisedInBnb] = useState('3');
-
   const [claimableBalance, setClaimableBalance] = useState('0');
-  const [progress, setProgress] = useState('10');  // This will store the progress percentage
+  const [progress, setProgress] = useState('10');
   const BNB_PRICE_USD = 240.18;
-  const PRESALE_CAP_BNB = 200;  // Your goal in BNB
+  const PRESALE_CAP_BNB = 200;
   const PRESALE_CAP_USD = PRESALE_CAP_BNB * BNB_PRICE_USD;
   const raisedUsd = parseFloat(raisedInBnb) * BNB_PRICE_USD;
 
   useEffect(() => {
     const updateBlockchainInfo = async () => {
-        await fetchTotalRaised();
-        await viewClaimableBalance();
+        const raised = await fetchTotalRaised(web3, CONTRACT_ABI, CONTRACT_ADDRESS);
+        setraisedInBnb(raised);
+        const claimable = await viewClaimableBalance(web3, walletAddress, CONTRACT_ABI, CONTRACT_ADDRESS);
+        setClaimableBalance(claimable);
         console.log(raisedInBnb, raisedUsd, claimableBalance);
     }
 
     updateBlockchainInfo();
     const intervalId = setInterval(updateBlockchainInfo, 5000);
 
+    const targetDate = new Date(Date.UTC(new Date().getUTCFullYear(), 7, 31, 16, 0, 0));
     const countdownInterval = setInterval(() => {
-      setCountdown(getCountdown());
+      setCountdown(getCountdown(targetDate));
     }, 1000);
 
     return () => {
@@ -48,71 +75,16 @@ export default function Presale() {
       clearInterval(countdownInterval);
     }
   }, [web3, walletAddress]);
-  
+
   const [countdown, setCountdown] = useState('');
-  const targetDate = new Date(Date.UTC(new Date().getUTCFullYear(), 7, 31, 16, 0, 0));  // Note: Month is 0-indexed, so 7 is August
-  const getCountdown = () => {
-    const now = new Date();
-    const timeDiff = targetDate - now;
-
-    const seconds = Math.floor((timeDiff / 1000) % 60);
-    const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
-    const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
-    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-
-    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }
 
   const handleWskyChange = (e) => {
     const wskyAmount = e.target.value;
     setAmount(wskyAmount);
   
-    const bnbEquivalent = (wskyAmount * 0.00008);  // Convert WSKY to BNB
+    const bnbEquivalent = (wskyAmount * 0.00008);
     setBnbValue(bnbEquivalent);
   };
-  
-
-  function buyTokens() {
-    if (!web3 || !bnbValue) return;  // Ensure that web3 and bnbValue are available before proceeding
-  
-    const contractInstance = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
-  
-    contractInstance.methods.buyTokens().send({
-      from: walletAddress,
-      value: web3.utils.toWei(bnbValue.toString(), 'ether')
-    });
-  }
-  
-
-
-  function refund(wskyAmount) {
-    if (!web3) return;  // Ensure that web3 is available before proceeding
-    const contractInstance = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
-
-    contractInstance.methods.Refund(wskyAmount).send({ from: walletAddress });
-  }
-
-  async function viewClaimableBalance() {
-    if (!web3) return;  // Ensure that web3 is available before proceeding
-    const contractInstance = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
-  
-    const balanceInWei = await contractInstance.methods.userTokenBalances(walletAddress).call();
-    const balanceInEther = web3.utils.fromWei(balanceInWei, 'ether');
-    setClaimableBalance(balanceInEther);
-  }
-
-  
-  async function fetchTotalRaised() {
-    if (!web3) return;  // Ensure that web3 is available before proceeding
-    
-    const contractInstance = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
-    const raisedInWei = await contractInstance.methods.totalRaised().call();
-    const raisedInBnb = web3.utils.fromWei(raisedInWei, 'ether');  // Convert Wei to BNB
-    setraisedInBnb(raisedInBnb);
-
-    const progressPercentage = (parseFloat(raisedInBnb) / parseFloat(PRESALE_CAP_BNB)) * 10;
-    setProgress(progressPercentage + 10);
-  }
 
   return (
     <div>
@@ -132,19 +104,18 @@ export default function Presale() {
               <a href="https://t.me/whiskeytools"><button>Telegram</button></a>
             </div>
           </div>
+          <div className='presaleCardContainer'>
           <div className='presaleCard'> 
             <h1>Purchase WSKY Here</h1>
             <p>{countdown}</p>
 
-            
-
-  {walletAddress ? (
+            {walletAddress ? (
               <div>
                 <div className="progress-container">
                  <div className="progress-bar" style={{ width: `${progress}%` }}></div>
                 <span>${raisedUsd.toFixed(2)} / ${PRESALE_CAP_USD}</span>
              </div>
-                <form onSubmit={e => { e.preventDefault(); buyTokens(); }}>
+                <form onSubmit={e => { e.preventDefault(); buyTokens(web3, bnbValue, walletAddress, CONTRACT_ABI, CONTRACT_ADDRESS); }}>
                   <label htmlFor="inputHeading"></label>
                   <input 
                     type="number" 
@@ -152,20 +123,23 @@ export default function Presale() {
                     name="WSKY Amount"
                     value={amount}
                     onChange={handleWskyChange} 
-                    min="125"  // Minimum WSKY to buy
+                    min="125"
                     placeholder='$WSKY'
+                    step={5}
+                    aria-valuemin={125}
+                    aria-valuemax={62500}
                   />
                   <p>BNB: {bnbValue.toFixed(4)}<br/>(+ 0.0005 gas)</p>
                   <button type="submit">Confirm Purchase</button>
                 </form>
                 <div className='buttonGroup center'>
-                  <button onClick={() => refund(amount)}>Refund</button>
-                  <button onClick={viewClaimableBalance} disabled>Claimable Balance: {claimableBalance} WSKY</button>
+                  <button onClick={() => refund(web3, amount, walletAddress, CONTRACT_ABI, CONTRACT_ADDRESS)}>Refund</button>
+                  <button onClick={() => viewClaimableBalance(web3, walletAddress, CONTRACT_ABI, CONTRACT_ADDRESS)} disabled>Claimable Balance: {claimableBalance} WSKY</button>
                 </div>
               </div>
             ) : (
-              // If wallet is not connected
-              <ConnectWallet 
+              <WagmiConfig config={wagmiConfig}>
+          <ConnectWallet 
                 onConnect={(web3Instance, address) => {
                   setWeb3(web3Instance);
                   setWalletAddress(address);
@@ -175,19 +149,21 @@ export default function Presale() {
                   setWalletAddress('');
                 }}
               />
+        </WagmiConfig>
+              
             )}
-
-           
+          </div>
           </div>
         </section>
         <Goals/>
+        <h2 className='sectionHeader'>Tokenomics</h2>
+
+        <Image alt="WSKY Tokenomics" width="0" height="0" className="tokenomicsImg" style={{ width: '100%', height: 'auto' }} src={Tokenomics} unoptimized/>
         <h2 className='sectionHeader'>View Top Tokens</h2>
 
         <CoinHero />
+        <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
 
-        <footer className="footer">
-          <p>&copy; 2023 Whiskey.Tools. All rights reserved.</p>
-        </footer>
       </div>
     </div>
   );

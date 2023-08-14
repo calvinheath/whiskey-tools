@@ -23,7 +23,8 @@
 /*  background-color:rgba(242.00000077486038, 0, 52.000000700354576, 1) !important;
 	background-image:linear-gradient(0deg, rgba(242.00000077486038, 0, 52.000000700354576, 1) 0%,rgba(255, 184.95296269655228, 134.2292109131813, 0.5) 100%) !important;
 */
-    background-color: #2a2a2a !important;
+    color: var(--foreground) !important;
+    background: var(--background-end) !important;
 
     text-decoration: none;
     letter-spacing: 0px;
@@ -205,7 +206,8 @@ a:hover .emoji
 {
     opacity: 0;
     transition: 0.1s ease;
-    filter: drop-shadow(2px 2px 6px #6a6a6a) !important;
+    filter: drop-shadow(2px 2px 4px #55555555) !important;
+    overflow: visible !important;
 }
 
 
@@ -271,5 +273,22 @@ a:hover .emoji
     padding: 20px;
     border-radius: 20px;
 }
+.tokenItem a:hover {
+    /*  background-color:rgba(242.00000077486038, 0, 52.000000700354576, 1) !important;
+        background-image:linear-gradient(0deg, rgba(242.00000077486038, 0, 52.000000700354576, 1) 0%,rgba(255, 184.95296269655228, 134.2292109131813, 0.5) 100%) !important;
+    */
+        padding: 0px 10px;
+    }
 
+    .colorLegend span
+    {
+        background-color: var(--background-end);
+        width: 100%;
+        padding: 10px 10px;
+        border-radius: 20px;
+    }
+    .legendColors
+    {
+        gap: 20px;
+    }
 }
