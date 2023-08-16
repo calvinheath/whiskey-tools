@@ -15,7 +15,7 @@ export default function Home() {
 
        <section className="hero">
        <div>
-       <h2>Say<span className='emojiHeading'><Image alt="Waving" width="100" height="100" src="https://em-content.zobj.net/source/microsoft-teams/363/waving-hand_1f44b.png" unoptimized/></span>to hard tasks <br/> with Whiskey.Tools</h2>
+       <h2>Say<span className='emojiHeading'><Image alt="Waving" width="100" height="100" src="https://em-content.zobj.net/source/microsoft-teams/363/waving-hand_1f44b.png" unoptimized/></span>to analytics<br/> with Whiskey.Tools</h2>
          <p>The ultimate platform for listing and voting on crypto tokens. <br/> Our Presale is Live, get some $WSKY before it ends<span className='emojiSubheading'><Image width="40" height="40" src="https://em-content.zobj.net/source/microsoft-teams/363/money-mouth-face_1f911.png" unoptimized/></span></p>
          <div className='buttonGroup'>
          <Link href="/presale"><button>View the Presale</button></Link>

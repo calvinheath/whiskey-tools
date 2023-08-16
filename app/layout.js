@@ -4,7 +4,12 @@ export const metadata = {
     title: 'Whiskey.Tools AI - $WSKY Presale Live',
     description: 'Say 👋 to complicated tasks with Whiskey.Tools. #1 Web3 Multitool on BSC - Presale Live Now',
 }
-
+const originalError = console.error;
+console.error = (...args) => {
+    if (!args[0].includes('Expected server HTML to contain a matching')) {
+        originalError(...args);
+    }
+};
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
