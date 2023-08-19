@@ -387,6 +387,18 @@ a:active, button:active
   border-radius: 20px;
 }
 
+.hero .buttonGroup
+{
+  height: 100% !important;
+  margin-bottom: 50px;
+  gap: 20px !important;
+  flex-direction: column !important;
+}
+.hero button
+{
+  width: 60%;
+}
+
     .sectionHeader
   {
     font-size: 3rem;

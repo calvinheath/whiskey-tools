@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Web3Button, Web3Modal, useWeb3Modal  } from "@web3modal/react";
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { configureChains, createConfig, useDisconnect, WagmiConfig, useAccount, usePrepareContractWrite, useContractRead, useContractWrite } from "wagmi";
-import { bsc } from "wagmi/chains";
+import { mainnet } from "wagmi/chains";
 import WSKYABI from "../WSKYAbi.json";
 import CountdownTimer from "./countdownTimer"
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { parseEther } from 'viem';
-const chains = [ bsc ];
+const chains = [ mainnet ];
 const projectId = "f82c4364b5a9adf93d73dbef5950e0a2";
 const CONTRACT_ABI = WSKYABI;   
 
@@ -24,7 +24,7 @@ const wagmiConfig = createConfig({
 function UserTokenBalance() {
     
     const { address, isConnecting } = useAccount();
-    const contractAddress = '0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65';
+    const contractAddress = '0x6a96610a6c4d5d57087911e2431df780b7f20109';
     const { data: userTokenBalances, loading, error } = useContractRead({
         address: contractAddress,
         abi: WSKYABI,
@@ -65,19 +65,19 @@ function UserTokenBalance() {
 }
 
 function TotalRaised() {
-    const contractAddress = '0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65';
-    const [BnbPriceinUsd, setBnbPriceinUsd] = useState('215')
-    const PRESALE_CAP_BNB = 200;
+    const contractAddress = '0x6a96610a6c4d5d57087911e2431df780b7f20109';
+    const [BnbPriceinUsd, setBnbPriceinUsd] = useState('1698')
+    const PRESALE_CAP_BNB = 50;
     const PRESALE_CAP_USD = PRESALE_CAP_BNB * BnbPriceinUsd;
     
     const fetchUserData = () => {
-        fetch("https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd")
+        fetch("https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd")
           .then(response => {
             return response.json()
           })
           .then(data => {
             // Extract BNB price from the returned data
-            const bnbPrice = data.binancecoin.usd;
+            const bnbPrice = data.ethereum.usd;
             setBnbPriceinUsd(bnbPrice);
             console.log(bnbPrice)
           })
@@ -110,7 +110,7 @@ function TotalRaised() {
             console.log(progressPercentage)
             setContent(
                 <div>
-                    <p>Total Raised: {totalRaisedBNB} BNB</p>
+                    <p>Total Raised: {totalRaisedBNB} ETH</p>
                     <div className="progress-container">
                         <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
                         <span>${totalRaisedUSD.toFixed(2)} / {PRESALE_CAP_USD.toLocaleString("en-US", {style:"currency", currency:"USD"})}</span>
@@ -125,13 +125,13 @@ function TotalRaised() {
 
 function BuyTokens() {
     const [amount, setAmount] = useState('');
-    const WSKY_PRICE_PER_TOKEN = 0.00008;
-    const MIN_WSKY_AMOUNT = 125;
-    const MAX_WSKY_AMOUNT = 50000;
+    const WSKY_PRICE_PER_TOKEN = 0.00002;
+    const MIN_WSKY_AMOUNT = 50;
+    const MAX_WSKY_AMOUNT = 250000;
     const MIN_BNB_PURCHASE = MIN_WSKY_AMOUNT * WSKY_PRICE_PER_TOKEN;
     const [bnbValue, setBnbValue] = useState(amount * WSKY_PRICE_PER_TOKEN);
     const { config } = usePrepareContractWrite({
-        address: '0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65',
+        address: '0x6a96610a6c4d5d57087911e2431df780b7f20109',
         abi: WSKYABI,
         functionName: 'buyTokens',
         value: parseEther(bnbValue.toString()) 
@@ -183,10 +183,10 @@ function BuyTokens() {
                     }
                 }
             } else {
-                toast.error("Connect Your Wallet or Check BNB Balance");
+                toast.error("Connect Your Wallet or Check ETH Balance");
             }
         } else {
-            toast.warn(`Amount below minimum purchase limit of ${MIN_BNB_PURCHASE} BNB`);
+            toast.warn(`Amount below minimum purchase limit of ${MIN_BNB_PURCHASE} ETH`);
         }
     };
     
@@ -210,7 +210,7 @@ function BuyTokens() {
                     aria-valuemin={MIN_WSKY_AMOUNT}
                     aria-valuemax={MAX_WSKY_AMOUNT}
                 />
-                <p>BNB: {bnbValue.toFixed(4)}<br /><span>(+ 0.0005 gas)</span></p>
+                <p>ETH: {bnbValue.toFixed(4)}<br /><span>(plus gas)</span></p>
                 <button type="submit">Buy Tokens</button>
             </form>
         </div>
@@ -222,7 +222,7 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains);
 
 export default function PresaleCard() {
   const [amount, setAmount] = useState("1000");
-  const contractAddress = "0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65";
+  const contractAddress = "0x6a96610a6c4d5d57087911e2431df780b7f20109";
 
 
 

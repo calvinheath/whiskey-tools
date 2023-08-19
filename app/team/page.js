@@ -1,4 +1,3 @@
-import Sidebar from '../components/sidebar';
 import "../globals.css";
 import "../styles/team.css";
 
@@ -21,7 +20,6 @@ export default function Team() {
 
   return (
     <div>
-      <Sidebar />
       <div className="container">
         <section className="teamContainer">
           <h1 className="sectionHeader">Meet the Team</h1>

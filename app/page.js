@@ -1,14 +1,10 @@
 import Image from 'next/image'
-import HeroImg from "../public/homepage.png"
 import CoinHero from './components/coinhero';
-import Sidebar from './components/sidebar';
 import "./globals.css"
 import Link from 'next/link';
-import Tokenomics from "../public/Tokenomics.png"
 export default function Home() {
   return (
     <div>
-    <Sidebar />
     <div className='container'>
       
              {/* Hero Section */}
@@ -19,8 +15,9 @@ export default function Home() {
          <p>The ultimate platform for crypto token listing and analytics. <br/>Join the Whiskey.Tools Community and Be a Part of the Innovation<span className='emojiSubheading'><Image width="40" height="40" src="https://em-content.zobj.net/source/microsoft-teams/363/money-mouth-face_1f911.png" unoptimized/></span></p>
          <div className='buttonGroup'>
          <Link href="/presale"><button>View the Presale</button></Link>
-         <a className="button" href="https://twitter.com/whiskeytoolsai" target='_blank'><button>Twitter</button></a>
-        <a href="https://t.me/whiskeytools"><button>Telegram</button></a>
+              <a href="https://twitter.com/whiskeytoolsai" target='_blank'><button>Twitter</button></a>
+              <a href="https://t.me/whiskeytools"><button>Telegram</button></a>
+              <a href="https://discord.gg/dbQ9SFZF5Y"><button>Discord</button></a>
         </div>
        </div>
        <Image alt="Whiskey Tools Hero Image" className="heroImage" width="0" height="0" style={{width: "380px",maxWidth: "35%"}}src="https://em-content.zobj.net/source/microsoft-teams/363/robot_1f916.png" unoptimized/>

@@ -1,3 +1,4 @@
+import Sidebar from "./components/sidebar";
 import "./globals.css";
 import Image from "next/image";
 export const metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
             </head>
             <body>{children}
             <div className="container">
+                <Sidebar/>
             <footer className="footer">
             <p>Made with <span className='footerEmoji'><Image alt="Love" width="0" height="0" src="https://em-content.zobj.net/source/microsoft-teams/363/red-heart_2764-fe0f.png" unoptimized/></span>by Calvin Heath</p>
             </footer>

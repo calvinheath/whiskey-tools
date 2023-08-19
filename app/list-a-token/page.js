@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import '../styles/listtoken.css'; // You can create a corresponding CSS file
 import '../globals.css'
-import Sidebar from '../components/sidebar';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const ListToken = () => {
@@ -60,7 +59,7 @@ const ListToken = () => {
   
 
   return (
-    <div className='container'><Sidebar/>
+    <div className='container'>
             <h2 className='sectionHeader'>List Your Token</h2>
 
 <div className="listTokenContainer">
