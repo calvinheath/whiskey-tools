@@ -40,7 +40,8 @@
   }
   .presaleCard
   {
-    width: 100%;
+    max-width: 100%;
+    min-width: 300px;
     height: 100% !important;
     background-color: var(--background-end);
     text-align: center !important;
@@ -54,7 +55,7 @@
     gap: 10px;
     outline: 3px solid var(--faded-accent);
     outline-offset: -3px;
-    padding: 50px 0px;
+    padding: 50px 50px;
   }
 
   .presaleContainer {
