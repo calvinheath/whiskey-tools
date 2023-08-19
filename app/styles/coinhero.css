@@ -90,13 +90,13 @@
 
 .tokenItem .ethchain
 {
-    outline: 2px solid lightskyblue;
+    outline: 2px solid deepskyblue;
 
 }
 
 .tokenItem .basechain
 {
-    outline: 2px solid deepskyblue;
+    outline: 2px solid lightskyblue;
 }
 
 .tokenItem .unverified
@@ -130,13 +130,13 @@
 
 .ethchain
 {
-    color: lightskyblue;
+    color: deepskyblue;
 
 }
 
 .basechain
 {
-    color: deepskyblue;
+    color: lightskyblue;
 }
 
 .unverified

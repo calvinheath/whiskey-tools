@@ -467,6 +467,7 @@ a:active, button:active
   {
     max-width: 80%;
     margin: auto;
+    margin-bottom: 80px !important;
   }
   
   }
@@ -510,16 +511,15 @@ a:active, button:active
       margin-bottom: -12px;
     }
 
-    .sectionHeader
+    .sidebarHeader
     {
-      font-size: 2rem;
-      font-family: 'Space Mono';
-      margin: 0 auto;
-      text-align: center;
-      font-weight: 900 !important;
+      display: none;
     }
     button 
     {
       color: var(--faded-accent) !important;
     }
+    .navLink:hover, .navLink {
+      background-color: var(--faded-accent) !important;
+      }
   }

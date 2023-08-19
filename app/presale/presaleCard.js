@@ -19,6 +19,8 @@ const wagmiConfig = createConfig({
   publicClient
 });
 
+
+
 function UserTokenBalance() {
     
     const { address, isConnecting } = useAccount();
@@ -64,10 +66,30 @@ function UserTokenBalance() {
 
 function TotalRaised() {
     const contractAddress = '0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65';
-    const BNB_PRICE_USD = 237.6;
+    const [BnbPriceinUsd, setBnbPriceinUsd] = useState('215')
     const PRESALE_CAP_BNB = 200;
-    const PRESALE_CAP_USD = PRESALE_CAP_BNB * BNB_PRICE_USD;
+    const PRESALE_CAP_USD = PRESALE_CAP_BNB * BnbPriceinUsd;
     
+    const fetchUserData = () => {
+        fetch("https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd")
+          .then(response => {
+            return response.json()
+          })
+          .then(data => {
+            // Extract BNB price from the returned data
+            const bnbPrice = data.binancecoin.usd;
+            setBnbPriceinUsd(bnbPrice);
+            console.log(bnbPrice)
+          })
+    }
+
+    useEffect(() => {
+        fetchUserData(); // Fetch data immediately when component is mounted
+        const interval = setInterval(fetchUserData, 10 * 1000); // Set up an interval to fetch data every 10 seconds
+
+        return () => clearInterval(interval); // Clean up the interval when component is unmounted
+    }, []); // Empty dependency array ensures this effect runs only once when component is mounted
+
     const [content, setContent] = useState(<p>Loading total raised...</p>); // Initial state
 
     const { data: totalRaised, loading, error } = useContractRead({
@@ -83,7 +105,7 @@ function TotalRaised() {
             setContent(<p>Error fetching total raised: {error.message}</p>);
         } else {
             const totalRaisedBNB = parseFloat(totalRaised) / (10**18);
-            const totalRaisedUSD = (totalRaisedBNB * BNB_PRICE_USD);
+            const totalRaisedUSD = (totalRaisedBNB * BnbPriceinUsd);
             const progressPercentage = ((totalRaisedUSD / PRESALE_CAP_USD) * 100) + 15;
             console.log(progressPercentage)
             setContent(
@@ -91,21 +113,18 @@ function TotalRaised() {
                     <p>Total Raised: {totalRaisedBNB} BNB</p>
                     <div className="progress-container">
                         <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
-                        <span>{totalRaisedUSD.toLocaleString("en-US", {style:"currency", currency:"USD"})} / {PRESALE_CAP_USD.toLocaleString("en-US", {style:"currency", currency:"USD"})}</span>
+                        <span>${totalRaisedUSD.toFixed(2)} / {PRESALE_CAP_USD.toLocaleString("en-US", {style:"currency", currency:"USD"})}</span>
                     </div>
                 </div>
             );
         }
-    }, [loading, error, totalRaised]);
+    }, [loading, error, totalRaised, BnbPriceinUsd]); // Added BnbPriceinUsd to the dependency array
 
     return content;
 }
 
-
 function BuyTokens() {
-    const [amount, setAmount] = useState('125');
-    const BNB_PRICE_USD = 237.6;
-    const PRESALE_CAP_BNB = 200;
+    const [amount, setAmount] = useState('');
     const WSKY_PRICE_PER_TOKEN = 0.00008;
     const MIN_WSKY_AMOUNT = 125;
     const MAX_WSKY_AMOUNT = 50000;
@@ -187,7 +206,7 @@ function BuyTokens() {
                     onChange={handleWskyChange}
                     min={MIN_WSKY_AMOUNT}
                     max={MAX_WSKY_AMOUNT}
-                    placeholder="$WSKY"
+                    placeholder="WSKY"
                     aria-valuemin={MIN_WSKY_AMOUNT}
                     aria-valuemax={MAX_WSKY_AMOUNT}
                 />

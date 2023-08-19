@@ -357,4 +357,33 @@ h2 .emojiHeading img
     margin: 0px -10px;
   }
 
+  .presaleCard
+{
+  width: 80% !important;
+  height: 100% !important;
+  background-color: var(--background-end);
+  background-color: none !important;
+  padding: 20px 20px;
+  margin: 0 auto;
+  margin-top: 0px;
+  text-align: center;
+  height: 100%;
+  border-radius: 20px !important;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column !important;
+  gap: 10px;
+  outline: 3px solid var(--faded-accent);
+}
+.presaleCard p
+{
+  padding: 0px !important;
+  margin: 0 auto;
+}
+#input
+{
+  font-size: large !important;
+}
+
 }

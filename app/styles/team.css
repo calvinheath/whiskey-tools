@@ -1,0 +1,169 @@
+.teamImage
+{
+    width: auto;
+    height: 365px;
+    image-rendering: antialiased;
+    border-radius: 40px;
+    box-shadow: 2px 8px 30px -16px var(--secondary-foreground);
+    user-select: none;
+}
+.teamMembers
+{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-height: 100%;
+
+}
+.teamMember
+{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.teamMember h1
+{
+    text-align: center;
+    font-family: 'Space Mono';
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 20px;
+    user-select: none;
+
+}
+.role
+{
+    padding: 10px 5px;
+
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Inter';
+    font-size: 1rem;
+    background-color: var(--background-start);
+    border-radius: 15px;
+    color: var(--secondary-foreground);
+    font-weight: 600;
+}
+.socials .disabled
+{
+    user-select: none;
+    cursor: auto !important;
+
+}
+.teamSocials
+{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+.socials
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center !important;
+}
+.socials .navLink
+{
+    text-align: center !important;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.teamMember .description
+{
+
+    background-color: var(--background-start);
+    height: 300px;
+    border-radius: 40px;
+    display: flex;
+    padding: 30px;
+    font-size: 1.2rem;
+    font-family: 'Inter';
+    letter-spacing: -1px;
+    line-height: 2rem;
+    width: 100%;
+
+}
+.landingP
+{
+    width: 90%;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 40px auto;
+    margin-top: -0px;
+}
+@media only screen and (max-width: 800px)  {
+
+.teamContainer
+{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+    .socials .navLink
+{
+    text-align: center !important;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    aspect-ratio: auto !important;
+}
+
+.teamMember
+{
+    display: flex;
+    flex-direction: column !important;
+    gap: 20px;
+    max-height: 100%;
+    margin: 0 auto;
+
+}
+.teamMembers
+{
+    margin: 0 auto;
+    width: 100%;
+}
+.teamImage
+{
+    max-width: 80%;
+    height: auto;
+    image-rendering: antialiased;
+    border-radius: 40px;
+    margin: 0 auto;
+    box-shadow: 2px 8px 30px -16px var(--secondary-foreground);
+    user-select: none;
+}
+.teamSocials
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+.description
+{
+    width: 80% !important;
+    margin: 0 auto;
+}
+.teamContainer .sectionHeader
+{
+    font-size: 2rem !important;
+}
+.teamContainer .landingP
+{
+    font-size: 1rem !important;
+    width: 100%;
+}
+.role
+{
+    background-color: var(--background-start) !important;
+}
+  }
