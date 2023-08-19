@@ -1,0 +1,82 @@
+.listTokenContainer {
+
+
+    margin: 0 auto;
+    background: var(--background-end);
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .formGroup {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    font-family: 'Inter';
+    letter-spacing: -1px;
+  }
+  
+  input,
+  select,
+  textarea {
+    padding: 10px;
+    outline: 2px solid var(--faded-accent);
+    border: none;
+    border-radius: 15px;
+    max-width: 100% !important;
+    background: var(--background-end);
+    resize: none;
+    font-size: 1rem;
+    font-family: 'Inter';
+    font-weight: 600;
+  }
+  
+  .imagePreview img {
+    max-width: 100px;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  option {
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin: 10px !important;  
+    z-index: 1;
+    font-size: 1rem;
+    font-family: 'Space Mono';
+    font-weight: 600;
+  }
+
+  
+  @media (max-width: 600px) {
+    .formGroup {
+      grid-template-columns: 1fr;
+    }
+    .listTokenContainer {
+
+
+        margin: 0 auto;
+        background: var(--background-end);
+        border-radius: 10px;
+        width: 80%;
+      }
+  }
+  
