@@ -27,7 +27,7 @@ Welcome to Whiskey.Tools! We're your next-gen platform for token listing and a s
 Our presale is live and roaring! Dive in and secure your $WSKY, the official token of Whiskey.Tools. Why wait when you can be part of the revolution now?
 
 - **[Purchase $WSKY](https://whiskey.tools/presale)**
-- **[View on Smart Contract on BSCScan](https://bscscan.com/address/0xd6f2dfe0e7204c4265e4f414f3855330f53b5e65#code)**
+- **[View on Smart Contract on Etherscan](https://etherscan.com/address/0x6a96610a6c4d5d57087911e2431df780b7f20109#code)**
 - **[Follow us on Twitter](https://twitter.com/whiskeytoolsai)**
 - **[Join us on Telegram](https://t.me/whiskeytools)**
 - **[Join us on Discord](https://discord.gg/dbQ9SFZF5Y)**
