@@ -5,6 +5,7 @@ export const metadata = {
     title: "Whiskey.Tools - Web3's Most Advanced Multi-Tool",
     description: 'Say 👋 to Whiskey.Tools, where we pair Artificial Intelligence with the new blockchain technologies.',
 }
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({ children }) {
     return (
@@ -36,6 +37,8 @@ export default function RootLayout({ children }) {
             </footer>
 
             </div>
+            <Analytics />
+
             </body>
             
         </html>
