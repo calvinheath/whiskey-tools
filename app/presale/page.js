@@ -29,7 +29,7 @@ export default function Presale() {
             </p>
             <span className='contractspan'><span className='noSelect'>CA: </span>0x6a96610a6c4d5d57087911e2431df780b7f20109</span>
             <div className='buttonGroup'>
-              <a href="https://etherscan.com/address/0x6a96610a6c4d5d57087911e2431df780b7f20109#code" target='_blank'><button>View on BSCScan</button></a>
+              <a href="https://etherscan.com/address/0x6a96610a6c4d5d57087911e2431df780b7f20109#code" target='_blank'><button>View on Etherscan</button></a>
               <a href="https://github.com/calvinheath/whiskey-tools"><button>Github Repo</button></a>
               <a href="https://twitter.com/whiskeytoolsai" target='_blank'><button>Twitter</button></a>
               <a href="https://t.me/whiskeytools"><button>Telegram</button></a>
