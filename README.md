@@ -3,7 +3,7 @@
 Welcome to Whiskey.Tools! We're your next-gen platform for token listing and a suite of comprehensive crypto tools. Born out of the sheer passion for innovation, we're set to redefine your crypto experience.
 
 # <img src="https://em-content.zobj.net/source/microsoft-teams/363/chart-increasing_1f4c8.png" style="margin-bottom: -10px;" alt="Rocket" width="42px"/> **Tokenomics:** 
-![Whiskey.Tools Banner](https://i.postimg.cc/Vv1P2cHG/chart.png)
+![Whiskey.Tools Banner](https://i.postimg.cc/nrYhFvKq/chart-Tokenomics-XL.png)
 
 ## <img src="https://em-content.zobj.net/source/microsoft-teams/337/old-key_1f5dd-fe0f.png" alt="Key Features" style="margin-bottom: -10px;" width="42px"/> **Key Features**:
 
