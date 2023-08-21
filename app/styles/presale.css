@@ -218,6 +218,7 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 20px;
   margin-top: 30px;
   user-select: all;
+  color: #2a2a2a !important;
 }
 .noSelect
 {
@@ -357,14 +358,14 @@ h2 .emojiHeading img
 
 @media only screen and (max-width: 600px) {
   .hero p {
-    font-size:  18px !important;
-    margin-top: 20px !important;
+    font-size:  16px !important;
+    margin-top: 10px !important;
     letter-spacing: 0px !important;
     font-family: 'Space Mono';
     font-weight: 500;
     text-align: left !important;
     margin: 0 auto;
-    width: 100%;
+    width: 90%;
     text-align: center !important;
 
   }

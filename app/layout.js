@@ -1,5 +1,6 @@
 import Sidebar from "./components/sidebar";
 import "./globals.css";
+import './styles/sidebar.css'
 import Image from "next/image";
 export const metadata = {
     title: "Whiskey.Tools - Web3's Most Advanced Multi-Tool",

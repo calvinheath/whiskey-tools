@@ -104,7 +104,7 @@ function TotalRaised() {
         } else if (error) {
             setContent(<p>Error fetching total raised: {error.message}</p>);
         } else {
-            const totalRaisedBNB = parseFloat(totalRaised) / (10**18);
+            const totalRaisedBNB = parseFloat(totalRaised) / (10**18) * 0.95;
             const totalRaisedUSD = (totalRaisedBNB * BnbPriceinUsd);
             const progressPercentage = ((totalRaisedUSD / PRESALE_CAP_USD) * 100) + 15;
             console.log(progressPercentage)

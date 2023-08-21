@@ -1,7 +1,6 @@
 // app/presale/page.js
 
 'use client';
-import CoinHero from '../components/coinhero';
 import "../globals.css";
 import "../styles/presale.css";
 import WSKYABI from "../WSKYAbi.json";
@@ -44,10 +43,6 @@ export default function Presale() {
         <h2 className='sectionHeader'>Tokenomics</h2>
 
         <Image alt="WSKY Tokenomics" width="0" height="0" className="tokenomicsImg" style={{ width: '100%', height: 'auto' }} src={Tokenomics} unoptimized/>
-        <h2 className='sectionHeader'>View Top Tokens</h2>
-
-        <CoinHero />
-
       </div>
   </div>
   );
