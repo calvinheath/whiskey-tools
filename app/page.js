@@ -2,6 +2,7 @@ import Image from 'next/image'
 import CoinHero from './components/coinhero';
 import "./globals.css"
 import Link from 'next/link';
+import Features from './components/features';
 export default function Home() {
   return (
     <div>
@@ -22,6 +23,8 @@ export default function Home() {
        </div>
        <Image alt="Whiskey Tools Hero Image" className="heroImage" width="0" height="0" style={{width: "380px",maxWidth: "35%"}}src="https://em-content.zobj.net/source/microsoft-teams/363/robot_1f916.png" unoptimized/>
      </section>
+
+      <Features/>
 
      <h2 className='sectionHeader'>View Top Tokens</h2>
 

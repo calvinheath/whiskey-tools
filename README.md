@@ -13,7 +13,7 @@ Welcome to Whiskey.Tools! We're your next-gen platform for token listing and a s
 
 - **🔮 **Contract Wizard****: Easily craft and deploy smart contracts. We've got compatibility with **BASE** and **Arbitrum** chains in our sights!
 
-- **🌉 **Multichain Vision****: Kicking off with our **Ethereum** presale. The multichain universe is our playground for the future!
+- **🌉 **Multichain Vision****: Kicking off with our **Binance Smart Chain** presale. The multichain universe is our playground for the future!
 
 - **⏱ **Live Countdown Timer****: Tick-tock, tick-tock. Every second counts in a token presale!
 

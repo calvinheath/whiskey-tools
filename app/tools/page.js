@@ -82,10 +82,10 @@ function UserClaimableBalance() {
   }
 
   const claimableBalance = parseFloat(userTokenBalances) / (10**18);
-  if (claimableBalance >= 5000) {
+  if (claimableBalance >= 1000) {
     return <Tools />;
   } else {
-    return <div className="overlayContainer"><p>You need at least 5,000 WSKY available to Claim to access the Tools. <br/><br/> Your current claimable balance is {claimableBalance} WSKY.</p>
+    return <div className="overlayContainer"><p>You need at least 1,000 WSKY available to Claim to access the Tools. <br/><br/> Your current claimable balance is {claimableBalance} WSKY.</p>
      <Link href="/presale"><button>Get More $WSKY</button></Link></div>;
   }
 }

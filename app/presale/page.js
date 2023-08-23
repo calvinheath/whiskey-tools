@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Goals from '../components/goals';
 import Tokenomics from "../../public/Tokenomics.png"
 import PresaleCard from "./presaleCard"; 
+import Features from "../components/features";
 
 const CONTRACT_ABI = WSKYABI;   
 const projectId = "f82c4364b5a9adf93d73dbef5950e0a2";
@@ -40,6 +41,7 @@ export default function Presale() {
           <PresaleCard/>
         </section>
         <Goals/>
+        <Features/>
         <h2 className='sectionHeader'>Tokenomics</h2>
 
         <Image alt="WSKY Tokenomics" width="0" height="0" className="tokenomicsImg" style={{ width: '100%', height: 'auto' }} src={Tokenomics} unoptimized/>
