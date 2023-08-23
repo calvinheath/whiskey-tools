@@ -118,6 +118,7 @@
     text-align: center;
     border-radius: 20px;
     font-weight: 900;
+    box-shadow: 0px 2px 24px -16px #5a5a5a;
     
   }
   .presaleCard input:focus
