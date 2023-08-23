@@ -9,6 +9,7 @@ import Goals from '../components/goals';
 import Tokenomics from "../../public/Tokenomics.png"
 import PresaleCard from "./presaleCard"; 
 import Features from "../components/features";
+import va from '@vercel/analytics';
 
 const CONTRACT_ABI = WSKYABI;   
 const projectId = "f82c4364b5a9adf93d73dbef5950e0a2";
@@ -29,11 +30,11 @@ export default function Presale() {
             </p>
             <span className='contractspan'><span className='noSelect'>CA: </span>0x6a96610a6c4d5d57087911e2431df780b7f20109</span>
             <div className='buttonGroup'>
-              <a href="https://etherscan.com/address/0x6a96610a6c4d5d57087911e2431df780b7f20109#code" target='_blank'><button>View on Etherscan</button></a>
-              <a href="https://github.com/calvinheath/whiskey-tools"><button>Github Repo</button></a>
-              <a href="https://twitter.com/whiskeytoolsai" target='_blank'><button>Twitter</button></a>
-              <a href="https://t.me/whiskeytools"><button>Telegram</button></a>
-              <a href="https://discord.gg/dbQ9SFZF5Y"><button>Discord</button></a>
+              <a href="https://etherscan.com/address/0x6a96610a6c4d5d57087911e2431df780b7f20109#code" target='_blank'><button onClick={() => {va.track('Etherscan');}}>View on Etherscan</button></a>
+              <a href="https://github.com/calvinheath/whiskey-tools"><button onClick={() => {va.track('Github');}}>Github Repo</button></a>
+              <a href="https://twitter.com/whiskeytoolsai" target='_blank'><button onClick={() => {va.track('Twitter');}}>Twitter</button></a>
+              <a href="https://t.me/whiskeytools"><button onClick={() => {va.track('Telegram');}}>Telegram</button></a>
+              <a href="https://discord.gg/dbQ9SFZF5Y"><button onClick={() => {va.track('Discord');}}>Discord</button></a>
 
 
             </div>
